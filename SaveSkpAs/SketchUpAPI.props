@@ -5,12 +5,15 @@
   <PropertyGroup />
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Thomas\SLAPI\SDK_Win_x64_18-0-18664\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(HOMEDRIVE)$(HOMEPATH)\SLAPI\SDK_Win_x64_18-0-18664\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\Thomas\SLAPI\SDK_Win_x64_18-0-18664\binaries\sketchup\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(HOMEDRIVE)$(HOMEPATH)\SLAPI\SDK_Win_x64_18-0-18664\binaries\sketchup\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SketchUpAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(HOMEDRIVE)$(HOMEPATH)\SLAPI\SDK_Win_x64_18-0-18664\binaries\sketchup\x64\*.dll" "$(OutputPath)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>
